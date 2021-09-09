@@ -9,7 +9,7 @@ import { ApiService } from '../api.service';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
-  pokemonData: Object;
+  pokemonData: any;
   sprites: any[];
   moves: any;
   
