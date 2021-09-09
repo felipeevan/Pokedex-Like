@@ -1,0 +1,79 @@
+<p-accordion [multiple]="true">
+    <p-accordionTab header="Imagens/Sprites do Pokemon" selected="true">
+        <div style="display: flex; text-align: center; justify-content: center;">
+            <p-galleria [images]="sprites" panelWidth="400" panelHeight="400"
+            [showCaption]="false"></p-galleria>
+        </div>
+    </p-accordionTab>
+    <p-accordionTab header="Dados do Pokemon" selected="true">
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-6 ui-lg-3" style="text-align: center;">
+                <div className="text-muted">Nome</div>
+                <strong>{{pokemonData?.name | titlecase}}</strong>
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-3" style="text-align: center;">
+                <div className="text-muted">Tipos</div>
+                <strong>{{this.getTipos()}}</strong>
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-3" style="text-align: center;">
+                <div className="text-muted">Altura</div>
+                <strong>{{pokemonData?.height/10}} m</strong>
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-3" style="text-align: center;">
+                <div className="text-muted">Peso</div>
+                <strong>{{pokemonData?.weight/10}} kg</strong>
+            </div>
+        </div>
+    </p-accordionTab>
+    <p-accordionTab header="Stats do Pokemon" selected="true">
+        <div class="ui-g">
+            <div class="ui-g-6 ui-md-4 ui-lg-2" style="text-align: center;" *ngFor="let stat of pokemonData?.stats"> 
+                <div className="text-muted">{{stat.stat.name | uppercase}}</div>
+                <strong>{{stat.base_stat}}</strong>
+            </div>
+        </div>
+    </p-accordionTab>
+    <p-accordionTab header="Habilidades" selected="true">
+        <p-table #tableAbility [value]="pokemonData?.abilities"
+        [responsive]="true" stateStorage="local" [autoLayout]="true">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th style="text-align: left;">Nome</th>
+                    <th style="text-align: left;">Habilidade escondida?</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-ability>
+                <tr>
+                    <td style="text-align: left;">{{ability.ability.name | titlecase}}</td>
+                    <td style="text-align: left;">{{ability.is_hidden?'Sim':'Não'}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </p-accordionTab>
+    <p-accordionTab header="Movesets" selected="true">
+        <p-table #tableMove [(value)]="moves"
+        [responsive]="true" stateStorage="local" [autoLayout]="true">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th style="text-align: left;">Nome</th>
+                    <th style="text-align: left;">Classe</th>
+                    <th style="text-align: left;">Tipo</th>
+                    <th style="text-align: left;">Poder/Dano</th>
+                    <th style="text-align: left;">Precisão</th>
+                    <th style="text-align: left;">PP (Power Points)</th>
+
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-move>
+                <tr>
+                    <td style="text-align: left;">{{move.name | titlecase}}</td>
+                    <td style="text-align: left;">{{move.damage_class | titlecase}}</td>
+                    <td style="text-align: left;">{{move.type | titlecase}}</td>
+                    <td style="text-align: left;">{{move.power}}</td>
+                    <td style="text-align: left;">{{move.accuracy}}</td>
+                    <td style="text-align: left;">{{move.pp}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </p-accordionTab>
+</p-accordion>

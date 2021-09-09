@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~primeicons/primeicons.css';
+@import '~primeng/resources/themes/rhea/theme.css';
+@import '~primeng/resources/primeng.min.css';
+
+html, body {
+    margin: 0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: #e9ecef;
+    border-radius: .3rem;
+}

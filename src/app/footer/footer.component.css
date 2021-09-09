@@ -1,0 +1,13 @@
+.footer{
+    left: 0;
+    bottom: 0;
+    width: -webkit-fill-available;
+    color: white;
+    text-align: text;
+    background-color: #CC0000;
+    border: 1px solid #CC0000;
+    font-size: 0.8em;
+    }
+ p {
+     margin: 2px;
+ }

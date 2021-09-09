@@ -1,0 +1,5 @@
+:host ::ng-deep .ui-galleria > .ui-galleria-panel-wrapper > .ui-galleria-panel > .ui-panel-images{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}

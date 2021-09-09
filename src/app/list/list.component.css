@@ -1,0 +1,17 @@
+.spinnerDiv{
+    min-height: 100%;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes ui-progress-spinner-color {
+    100%{
+        stroke: #CC0000;
+
+    }
+}
+
+p-dropdown{
+    width: 100%;
+}

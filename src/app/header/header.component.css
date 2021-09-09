@@ -1,0 +1,35 @@
+.header{
+    background-color: #CC0000;
+    align-items: center;
+    padding: 10px;
+    display: flex;
+}
+  
+.header > div{
+    display: inline-flex;
+}
+
+.navigators a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 0.5em;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 1em;
+}
+
+ .active{
+    font-weight: bold;
+}
+
+.navigators a:hover {
+    background-color: white;
+    color: black;
+}  
+
+.logo-img{
+    width: 2em;
+    height: 2em;
+    margin-right: 20px;
+}
